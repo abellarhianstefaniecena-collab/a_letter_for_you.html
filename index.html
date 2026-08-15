@@ -1,37 +1,315 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para sa Akong Love 💗</title>
+
+    <title>For you lalab</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Georgia", serif;
+            background: linear-gradient(135deg, #6a0dad, #8e44ad, #b57edc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 15px;
+            overflow-x: hidden;
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: fixed;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 25px;
+            animation: float 6s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        .heart:nth-child(1) {
+            left: 8%;
+            top: 15%;
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(2) {
+            left: 85%;
+            top: 20%;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(3) {
+            left: 15%;
+            bottom: 15%;
+            animation-delay: 1s;
+        }
+
+        .heart:nth-child(4) {
+            right: 10%;
+            bottom: 12%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: translateY(-30px) rotate(15deg);
+                opacity: 1;
+            }
+        }
+
+        /* Main letter */
+        .letter {
+            position: relative;
+            width: 100%;
+            max-width: 720px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 30px;
+            border-radius: 30px;
+            box-shadow:
+                0 0 25px rgba(255, 255, 255, 0.35),
+                0 20px 50px rgba(44, 0, 60, 0.4);
+            border: 3px solid rgba(255, 255, 255, 0.7);
+        }
+
+        /* Decorative corners */
+        .corner {
+            position: absolute;
+            font-size: 35px;
+        }
+
+        .top-left {
+            top: 15px;
+            left: 20px;
+        }
+
+        .top-right {
+            top: 15px;
+            right: 20px;
+        }
+
+        .bottom-left {
+            bottom: 15px;
+            left: 20px;
+        }
+
+        .bottom-right {
+            bottom: 15px;
+            right: 20px;
+        }
+
+        .big-heart {
+            text-align: center;
+            font-size: 60px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: #7b2cbf;
+            font-size: 35px;
+            margin: 10px 0 5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #9b59b6;
+            font-size: 16px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .line {
+            width: 80%;
+            height: 2px;
+            margin: 20px auto;
+            background: linear-gradient(
+                to right,
+                transparent,
+                #9b59b6,
+                transparent
+            );
+        }
+
+        p {
+            color: #4b4052;
+            font-size: 17px;
+            line-height: 1.9;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: #7b2cbf;
+            font-weight: bold;
+        }
+
+        .ending {
+            text-align: center;
+            color: #7b2cbf;
+            font-size: 19px;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+
+        .signature {
+            text-align: center;
+            color: #9b59b6;
+            font-size: 18px;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .sparkles {
+            text-align: center;
+            font-size: 20px;
+            letter-spacing: 8px;
+            margin-top: 20px;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .letter {
+                padding: 35px 22px;
+                border-radius: 25px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 1.8;
+            }
+
+            .big-heart {
+                font-size: 50px;
+            }
+        }
+    </style>
 </head>
-<body style="background-color:#ffeef5;font-family:Arial,sans-serif;">
-<div style="max-width:700px;margin:30px auto;background:white;padding:35px;border-radius:20px;box-shadow:0 4px 15px rgba(0,0,0,.15);">
-<h1 style="text-align:center;color:#e75480;">💗 Para sa Akong Love 💗</h1>
-<p style="font-size:18px;color:#444;"><b>Dear Love,</b></p>
 
-<p style="font-size:17px;line-height:1.8;color:#444;">Gusto lang gyud ko maghimo ani nga letter para makaingon ko nimo og daghang salamat. Salamat kay naa ka sa akong kinabuhi. Basin usahay dili nako maingon pirmi kung unsa ko ka-thankful nimo, pero gusto ko nga makahibalo ka nga dako kaayo kog appreciation sa tanan nimong ginabuhat para nako.</p>
+<body>
 
-<p style="font-size:17px;line-height:1.8;color:#444;">Salamat sa imong pagpabilin ug sa imong paghatag og time para nako. Salamat sa pagpaminaw sa akong mga istorya, bisan usahay random ra kaayo akong mga gipangstorya. Salamat pud sa imong pagsabot sa akong moods ug sa akong mga gibati. Kabalo ko nga dili ko permi sayon sabton, pero imong paningkamotan gihapon nga masabtan ko.</p>
+    <!-- Floating decorations -->
+    <div class="heart">🤍</div>
+    <div class="heart">♡</div>
+    <div class="heart">💜</div>
+    <div class="heart">😚</div>
 
-<p style="font-size:17px;line-height:1.8;color:#444;">Salamat kay kabalo ka unsaon ko pagpasmile bisan simple ra kaayo imong gibuhat. Usahay, usa lang ka message gikan nimo, okay na dayon akong mood. Bisan ang imong simple nga "kumusta ka?" dako na kaayo na og meaning para nako. I appreciate even the smallest things you do because I know nga imong gibuhat tungod kay gusto nimo nga malipay ko.</p>
+    <div class="letter">
 
-<p style="font-size:17px;line-height:1.8;color:#444;">Thankful pud kaayo ko sa tanan natong memories. Ang atong mga kataw-anan nga conversations, mga jokes, mga sweet moments, ug bisan ang atong mga misunderstandings, tanan importante para nako. Tungod sa mga moments nga atong naagian, mas nakaila ug nakasabot ko nimo.</p>
+        <!-- Corner decorations -->
+        <div class="corner top-left">✨</div>
+        <div class="corner top-right">✨</div>
+        <div class="corner bottom-left">🌸</div>
+        <div class="corner bottom-right">🌸</div>
 
-<p style="font-size:17px;line-height:1.8;color:#444;">Salamat sa pagdawat nako kung unsa ko. Salamat kay dili nimo ko pugson nga mahimong lain nga person. Salamat sa imong patience kung naa koy mga adlaw nga dili ko okay. Dako kaayo og meaning para nako nga naa koy tawo nga pwede nako kasultihan ug masaligan.</p>
+        <div class="big-heart">💗</div>
 
-<p style="font-size:17px;line-height:1.8;color:#444;">Kabalo ko nga dili permi perfect ang relationship. Naay times nga magkasayop ta, mag-away, magmisunderstanding, o dili ta magkasinabot. Pero thankful ko kay bisan pa ana, maningkamot gihapon ta nga masabtan ang usag usa ug ayuhon ang mga butang nga kinahanglan ayuhon.</p>
+        <h1>🤍For you lablab😚</h1>
 
-<p style="font-size:17px;line-height:1.8;color:#444;">Gusto pud ko nga makahibalo ka nga makita nako imong efforts. Makita nako ang imong time, patience, kindness, ug effort para nako. Bisan dili nako permi maingon nga "thank you," please know nga I notice everything. Dili nako i-take for granted ang mga butang nga imong ginabuhat para nako.</p>
+        <div class="subtitle">
+            A little letter from my heart to yours ♡
+        </div>
 
-<p style="font-size:17px;line-height:1.8;color:#444;">Salamat sa tanan natong laughter, conversations, memories, ug sa mga moments nga nakapahappy nako. Thankful ko nga nakaila ko nimo ug nga nahimo kang importanteng part sa akong life.</p>
+        <div class="line"></div>
 
-<p style="font-size:17px;line-height:1.8;color:#444;">Dili man nako mahibaloan unsa ang mahitabo sa future, pero thankful ko sa kung unsa man ang naa nato karon. I hope nga padayon ta nga mag-support sa usag usa, magtinabangay, mag-sinabtanay, ug maghimo pa og daghang nindot nga memories.</p>
+        <p>
+            Hi loveee! 🥹💜
+        </p>
 
-<p style="font-size:17px;line-height:1.8;color:#444;">More than anything, gusto lang nako nga makahibalo ka nga thankful kaayo ko nimo. Salamat sa imong presence, sa imong care, sa imong patience, ug sa tanan nimong efforts. Dili man nako ma-express tanan pinaagi sa words, pero I hope this letter reminds you kung unsa ka ka-important para nako.</p>
+        <p>
+            I just want to say thank youu kaau bal:) 
+            Thank you kay you're always there for me,
+            bisag naatimes na busy-busy tagamayHAHA ug samot na anang dta okay.
+            Salamat sa imong oras, effort, patience, ug pagsabot.
+        </p>
 
-<p style="text-align:center;font-size:20px;color:#e75480;margin-top:30px;"><b>Daghang salamat sa tanan, Love. ❤️</b></p>
-<p style="text-align:right;font-size:17px;color:#555;margin-top:30px;">Love always,<br><b>Your girl 💗</b></p>
-</div>
+        <p>
+            Thank you sa mga simple things nga imong gina do for me
+            nga basin para's imoha lablab is gamay ra, pero para nako bal dako nakaayo
+            na ug meaning. Thank youu sa imong mga words nga makapasmile nako
+            ug sa mga moments nga nakapafeel nimo nga importante ko lablab.
+        </p>
+
+        <p>
+            Kabalo ko nga dili pirmi perfect ang tanan. Naay times nga
+            magkasinabtanay ta ug naa puy times nga magkalahi atong
+            utok charotHAHAHA akoa raman gud. Pero thankful ko kay padayon gihapon ta nga
+            galearn unsaon pagsabot ug pag-appreciate sa matag usa
+        </p>
+
+        <p>
+            I really appreciate having you in my life. Dili man ko
+            perfect nga partner lablab, pero gusto nako nga mahibaw-an nimo
+            nga importante kaayo ka nako mahal🥹🥹.
+            I hope nga ma-feel nimo kung unsa ko ka-thankful nga naa ka always sa'kong
+            side bal.
+        </p>
+
+        <p>
+            Salamat sa tanan nimong effort, sa imong kindness,
+            sa imong patience, ug sa mga memories nga atong nahimo.
+            I will always treasure the happy moments nga atong
+            gishare together akong bana🥹🤍
+        </p>
+        
+        <p> And then sorryyy kaau lablab sa mga bati nako na
+            nahimo nmo po, sorry kaau tungod gapasulabi ang ego
+            sa imong asawa lablab kabalo ka bal dli parabana
+            maoHAHAHAHA charot ra bal uy mabut an rko puhon balHAHA
+            loveee man kaau ni nakong bana nako maong dnako mangaway
+            nmo lablab (paminawon langgudHAHA)
+        </p>
+
+        <p>
+            Bisan unsa pa ang mahitabo, I hope nga padayon ta nga
+            magtinabangay, mag-respeto, ug mag-support each other.
+            Thank you for being someone nga akong ma-appreciate,
+            ma-value, ug ma-thankful every day. Dli lang na bal
+            pero daghan pakaau lablab. No words can explain how
+            thankful I'am to have you bal🥹
+        </p>
+
+        <div class="line"></div>
+
+        <p class="ending">
+            Thank you for being part of my life💗
+            Iloveyousomuchhyyy😚😚
+        </p>
+
+        <p class="signature">
+            With all my love,<br>
+            asawa nmo😚♡
+        </p>
+
+        <div class="sparkles">
+            ✨ 💗 ✨
+        </div>
+
+    </div>
+
 </body>
 </html>
