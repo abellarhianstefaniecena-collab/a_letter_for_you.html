@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Little Secret 💜</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #4b0082, #7b2cbf, #c77dff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .heart {
+            position: fixed;
+            font-size: 25px;
+            opacity: 0.7;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        .h1 {
+            left: 8%;
+            top: 15%;
+        }
+
+        .h2 {
+            right: 10%;
+            top: 20%;
+            animation-delay: 1s;
+        }
+
+        .h3 {
+            left: 12%;
+            bottom: 15%;
+            animation-delay: 2s;
+        }
+
+        .h4 {
+            right: 12%;
+            bottom: 12%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-25px);
+            }
+        }
+
+        .box {
+            width: 100%;
+            max-width: 620px;
+            background: rgba(255, 255, 255, 0.96);
+            padding: 35px 25px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+        }
+
+        .emoji {
+            font-size: 55px;
+        }
+
+        h1 {
+            color: #7b2cbf;
+            font-size: 30px;
+        }
+
+        h2 {
+            color: #7b2cbf;
+        }
+
+        p {
+            color: #555;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* PASSCODE */
+
+        .passcode {
+            width: 90%;
+            padding: 15px;
+            border: 2px solid #b57edc;
+            border-radius: 15px;
+            outline: none;
+            text-align: center;
+            font-size: 18px;
+            margin: 15px 0;
+            background: #faf3ff;
+        }
+
+        .passcode:focus {
+            border-color: #7b2cbf;
+            box-shadow: 0 0 10px rgba(123,44,191,0.25);
+        }
+
+        /* ANSWER BOX */
+
+        textarea {
+            width: 90%;
+            min-height: 120px;
+            padding: 15px;
+            border: 2px solid #b57edc;
+            border-radius: 15px;
+            outline: none;
+            resize: vertical;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            background: #faf3ff;
+            margin: 15px 0;
+        }
+
+        textarea:focus {
+            border-color: #7b2cbf;
+            box-shadow: 0 0 10px rgba(123,44,191,0.25);
+        }
+
+        button {
+            border: none;
+            padding: 14px 28px;
+            margin: 8px;
+            border-radius: 30px;
+            background: #7b2cbf;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+            background: #5a189a;
+        }
+
+        .error {
+            color: #d63384;
+            font-size: 14px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .letter {
+            text-align: left;
+            background: #faf3ff;
+            padding: 20px;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+
+        .letter p {
+            font-size: 16px;
+        }
+
+        .ending {
+            text-align: center;
+            color: #7b2cbf;
+            font-weight: bold;
+        }
+
+        .signature {
+            text-align: center;
+            color: #9b59b6;
+            font-style: italic;
+        }
+
+        .sparkles {
+            font-size: 22px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- FLOATING DECORATIONS -->
+
+    <div class="heart h1">💜</div>
+    <div class="heart h2">✨</div>
+    <div class="heart h3">💜</div>
+    <div class="heart h4">🌸</div>
+
+
+    <div class="box">
+
+
+        <!-- ========================= -->
+        <!-- PASSCODE PAGE -->
+        <!-- ========================= -->
+
+        <div id="passcodePage">
+
+            <div class="emoji">🔐💜</div>
+
+            <h1>Something Special...</h1>
+
+            <p>
+                This little website is only for you. 🥹
+            </p>
+
+            <p>
+                Enter the secret passcode to continue.
+            </p>
+
+            <input
+                type="password"
+                id="passcodeInput"
+                class="passcode"
+                placeholder="Enter the secret code..."
+            >
+
+            <p id="passcodeError" class="error"></p>
+
+            <button onclick="checkPasscode()">
+                UNLOCK 💜
+            </button>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- WELCOME PAGE -->
+        <!-- ========================= -->
+
+        <div id="welcomePage" class="hidden">
+
+            <div class="emoji">💜🥹💜</div>
+
+            <h1>Hi Loveee!</h1>
+
+            <p>
+                You made it! 🥹
+            </p>
+
+            <p>
+                I have a few little questions for you.
+                Please answer them honestly. 💗
+            </p>
+
+            <button onclick="showQuestion1()">
+                I'M READY 💜
+            </button>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- QUESTION 1 -->
+        <!-- ========================= -->
+
+        <div id="question1" class="hidden">
+
+            <div class="emoji">💭</div>
+
+            <h1>Question #1</h1>
+
+            <p>
+                What is your favorite memory of us?
+            </p>
+
+            <textarea
+                id="answer1"
+                placeholder="Type your answer here... 💜">
+            </textarea>
+
+            <p id="error1" class="error"></p>
+
+            <button onclick="submitAnswer1()">
+                SUBMIT 💌
+            </button>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- QUESTION 2 -->
+        <!-- ========================= -->
+
+        <div id="question2" class="hidden">
+
+            <div class="emoji">🥹</div>
+
+            <h1>Question #2</h1>
+
+            <p>
+                What is one thing you appreciate about me?
+            </p>
+
+            <textarea
+                id="answer2"
+                placeholder="Tell me honestly... 💗">
+            </textarea>
+
+            <p id="error2" class="error"></p>
+
+            <button onclick="submitAnswer2()">
+                SUBMIT 💌
+            </button>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- QUESTION 3 -->
+        <!-- ========================= -->
+
+        <div id="question3" class="hidden">
+
+            <div class="emoji">✨</div>
+
+            <h1>Question #3</h1>
+
+            <p>
+                What is something you want us to experience together someday?
+            </p>
+
+            <textarea
+                id="answer3"
+                placeholder="Your answer... ✨">
+            </textarea>
+
+            <p id="error3" class="error"></p>
+
+            <button onclick="submitAnswer3()">
+                SUBMIT 💌
+            </button>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- QUESTION 4 -->
+        <!-- ========================= -->
+
+        <div id="question4" class="hidden">
+
+            <div class="emoji">💜</div>
+
+            <h1>Question #4</h1>
+
+            <p>
+                Is there something you've always wanted to tell me?
+            </p>
+
+            <textarea
+                id="answer4"
+                placeholder="Anything you want to say... 🥹">
+            </textarea>
+
+            <p id="error4" class="error"></p>
+
+            <button onclick="showLetter()">
+                FINISH 💗
+            </button>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- FINAL LETTER -->
+        <!-- ========================= -->
+
+        <div id="letterPage" class="hidden">
+
+            <div class="emoji">💌💜</div>
+
+            <h1>Thank You, Love</h1>
+
+            <div class="letter">
+
+                <p>
+                    Hi loveee! 🥹💜
+                </p>
+
+                <p>
+                    Thank you for taking the time to answer my little
+                    questions. I hope you enjoyed answering them as much
+                    as I enjoyed making this little surprise for you.
+                </p>
+
+                <p>
+                    I just want you to know how thankful I am to have
+                    you in my life. Thank you for your patience, your
+                    effort, your kindness, and all the little things
+                    you do that make me smile.
+                </p>
+
+                <p>
+                    I know that things aren't always perfect. We may
+                    have misunderstandings and disagreements sometimes,
+                    but I'm thankful that we continue to learn,
+                    understand, and appreciate each other.
+                </p>
+
+                <p>
+                    Every memory, every laugh, every conversation,
+                    and every simple moment we share means something
+                    special to me.
+                </p>
+
+                <p>
+                    I may not always say it, but I hope you know that
+                    you are important to me. I'm really grateful that
+                    I met you and that you're a special part of my life.
+                </p>
+
+                <p class="ending">
+                    Thank you for everything, Love. 💜
+                </p>
+
+                <p class="signature">
+                    With love,<br>
+                    Your girl 💗
+                </p>
+
+            </div>
+
+            <div class="sparkles">
+                ✨ 💜 ✨ 💜 ✨
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ========================= -->
+
+    <script>
+
+        /* =========================================
+           CHANGE YOUR PASSCODE HERE
+           ========================================= */
+
+        const PASSCODE = "ILOVEYOU";
+
+
+        function hideAll() {
+
+            document.getElementById("passcodePage")
+                .classList.add("hidden");
+
+            document.getElementById("welcomePage")
+                .classList.add("hidden");
+
+            document.getElementById("question1")
+                .classList.add("hidden");
+
+            document.getElementById("question2")
+                .classList.add("hidden");
+
+            document.getElementById("question3")
+                .classList.add("hidden");
+
+            document.getElementById("question4")
+                .classList.add("hidden");
+
+            document.getElementById("letterPage")
+                .classList.add("hidden");
+        }
+
+
+        function checkPasscode() {
+
+            let enteredCode =
+                document.getElementById("passcodeInput").value;
+
+            if (enteredCode === PASSCODE) {
+
+                hideAll();
+
+                document.getElementById("welcomePage")
+                    .classList.remove("hidden");
+
+            } else {
+
+                document.getElementById("passcodeError").innerHTML =
+                    "Wrong passcode, love. 🥺 Try again!";
+
+            }
+        }
+
+
+        function showQuestion1() {
+
+            hideAll();
+
+            document.getElementById("question1")
+                .classList.remove("hidden");
+        }
+
+
+        function submitAnswer1() {
+
+            let answer =
+                document.getElementById("answer1").value.trim();
+
+            if (answer === "") {
+
+                document.getElementById("error1").innerHTML =
+                    "Please answer first, love. 🥹💜";
+
+                return;
+            }
+
+            hideAll();
+
+            document.getElementById("question2")
+                .classList.remove("hidden");
+        }
+
+
+        function submitAnswer2() {
+
+            let answer =
+                document.getElementById("answer2").value.trim();
+
+            if (answer === "") {
+
+                document.getElementById("error2").innerHTML =
+                    "I want to hear your answer. 🥺💜";
+
+                return;
+            }
+
+            hideAll();
+
+            document.getElementById("question3")
+                .classList.remove("hidden");
+        }
+
+
+        function submitAnswer3() {
+
+            let answer =
+                document.getElementById("answer3").value.trim();
+
+            if (answer === "") {
+
+                document.getElementById("error3").innerHTML =
+                    "Don't skip this one. 🥹✨";
+
+                return;
+            }
+
+            hideAll();
+
+            document.getElementById("question4")
+                .classList.remove("hidden");
+        }
+
+
+        function showLetter() {
+
+            let answer =
+                document.getElementById("answer4").value.trim();
+
+            if (answer === "") {
+
+                document.getElementById("error4").innerHTML =
+                    "Tell me something first. 💜";
+
+                return;
+            }
+
+            hideAll();
+
+            document.getElementById("letterPage")
+                .classList.remove("hidden");
+        }
+
+    </script>
+
+</body>
+</html>
