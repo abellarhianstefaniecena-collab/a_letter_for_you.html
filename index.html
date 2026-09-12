@@ -4,113 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>For you lalab</title>
+    <title>7th Monthsary 💗</title>
 
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
         body {
             margin: 0;
+            padding: 0;
+            font-family: "Poppins", Arial, sans-serif;
+            background: linear-gradient(135deg, #f3d9ff, #ffd6ec);
+            color: #4a2857;
             min-height: 100vh;
-            font-family: "Georgia", serif;
-            background: linear-gradient(135deg, #6a0dad, #8e44ad, #b57edc);
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 30px 15px;
-            overflow-x: hidden;
         }
 
-        /* Floating hearts */
-        .heart {
-            position: fixed;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 25px;
-            animation: float 6s infinite ease-in-out;
-            pointer-events: none;
-        }
-
-        .heart:nth-child(1) {
-            left: 8%;
-            top: 15%;
-            animation-delay: 0s;
-        }
-
-        .heart:nth-child(2) {
-            left: 85%;
-            top: 20%;
-            animation-delay: 2s;
-        }
-
-        .heart:nth-child(3) {
-            left: 15%;
-            bottom: 15%;
-            animation-delay: 1s;
-        }
-
-        .heart:nth-child(4) {
-            right: 10%;
-            bottom: 12%;
-            animation-delay: 3s;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 0.5;
-            }
-
-            50% {
-                transform: translateY(-30px) rotate(15deg);
-                opacity: 1;
-            }
-        }
-
-        /* Main letter */
-        .letter {
-            position: relative;
-            width: 100%;
-            max-width: 720px;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px 30px;
-            border-radius: 30px;
-            box-shadow:
-                0 0 25px rgba(255, 255, 255, 0.35),
-                0 20px 50px rgba(44, 0, 60, 0.4);
-            border: 3px solid rgba(255, 255, 255, 0.7);
-        }
-
-        /* Decorative corners */
-        .corner {
-            position: absolute;
-            font-size: 35px;
-        }
-
-        .top-left {
-            top: 15px;
-            left: 20px;
-        }
-
-        .top-right {
-            top: 15px;
-            right: 20px;
-        }
-
-        .bottom-left {
-            bottom: 15px;
-            left: 20px;
-        }
-
-        .bottom-right {
-            bottom: 15px;
-            right: 20px;
-        }
-
-        .big-heart {
+        .container {
+            width: 90%;
+            max-width: 650px;
+            background: rgba(255, 255, 255, 0.92);
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(100, 50, 120, 0.2);
             text-align: center;
-            font-size: 60px;
+        }
+
+        .heart {
+            font-size: 45px;
             animation: heartbeat 1.5s infinite;
         }
 
@@ -118,205 +38,191 @@
             0%, 100% {
                 transform: scale(1);
             }
-
             50% {
                 transform: scale(1.15);
             }
         }
 
         h1 {
-            text-align: center;
-            color: #7b2cbf;
-            font-size: 35px;
-            margin: 10px 0 5px;
+            color: #9b4dcc;
+            font-size: 32px;
+            margin-bottom: 5px;
         }
 
-        .subtitle {
-            text-align: center;
-            color: #9b59b6;
+        h2 {
+            color: #d65b9c;
+            margin-top: 5px;
+        }
+
+        .date {
+            font-size: 14px;
+            color: #8c6a96;
+            margin-bottom: 25px;
+        }
+
+        .letter {
+            text-align: left;
+            line-height: 1.8;
             font-size: 16px;
-            margin-bottom: 30px;
-            font-style: italic;
         }
 
-        .line {
-            width: 80%;
-            height: 2px;
-            margin: 20px auto;
-            background: linear-gradient(
-                to right,
-                transparent,
-                #9b59b6,
-                transparent
-            );
+        .letter p {
+            margin-bottom: 18px;
         }
 
-        p {
-            color: #4b4052;
-            font-size: 17px;
-            line-height: 1.9;
-            text-align: justify;
-            margin-bottom: 20px;
-        }
-
-        .highlight {
-            color: #7b2cbf;
-            font-weight: bold;
-        }
-
-        .ending {
-            text-align: center;
-            color: #7b2cbf;
-            font-size: 19px;
-            font-weight: bold;
-            margin-top: 30px;
-        }
-
-        .signature {
-            text-align: center;
-            color: #9b59b6;
-            font-size: 18px;
-            margin-top: 10px;
-            font-style: italic;
-        }
-
-        .sparkles {
-            text-align: center;
-            font-size: 20px;
-            letter-spacing: 8px;
+        .button {
             margin-top: 20px;
+            padding: 13px 25px;
+            border: none;
+            border-radius: 30px;
+            background: #b85bd6;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
         }
 
-        /* Mobile */
-        @media (max-width: 600px) {
-            .letter {
-                padding: 35px 22px;
-                border-radius: 25px;
-            }
+        .button:hover {
+            background: #9b4dcc;
+        }
 
-            h1 {
-                font-size: 28px;
-            }
+        #message {
+            display: none;
+            margin-top: 20px;
+            padding: 18px;
+            background: #f8e5ff;
+            border-radius: 15px;
+            color: #743c83;
+            line-height: 1.6;
+        }
 
-            p {
-                font-size: 16px;
-                line-height: 1.8;
-            }
-
-            .big-heart {
-                font-size: 50px;
-            }
+        .bottom-hearts {
+            margin-top: 25px;
+            font-size: 25px;
+            letter-spacing: 8px;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Floating decorations -->
-    <div class="heart">🤍</div>
-    <div class="heart">♡</div>
-    <div class="heart">💜</div>
-    <div class="heart">😚</div>
+<div class="container">
+
+    <div class="heart">💗</div>
+
+    <h1>HAPPY 7TH MONTHSARY</h1>
+    <h2>HUBBYYY NAKO 🥹😚</h2>
+
+    <div class="date">
+        Seven months with you 💕
+    </div>
 
     <div class="letter">
 
-        <!-- Corner decorations -->
-        <div class="corner top-left">✨</div>
-        <div class="corner top-right">✨</div>
-        <div class="corner bottom-left">🌸</div>
-        <div class="corner bottom-right">🌸</div>
-
-        <div class="big-heart">💗</div>
-
-        <h1>🤍For you lablab😚</h1>
-
-        <div class="subtitle">
-            A little letter from my heart to yours ♡
-        </div>
-
-        <div class="line"></div>
-
         <p>
-            Hi loveee! 🥹💜
+            Hi hubbyyy nako! 🥹💗 Happy 7th monthsary sa atoa,
+            lablab! Grabe, seven months na jud ta. Murag bag-o paman
+            sguro tung 1st month natoHAHAHA, pero karon nakaabot na 
+            jud ta og seven months, sayunan kaana taas na kaykag naantos
+            nakoHAHAHAH.
         </p>
 
         <p>
-            I just want to say thank youu kaau bal:) 
-            Thank you kay you're always there for me,
-            bisag naatimes na busy-busy tagamayHAHA ug samot na anang dta okay.
-            Salamat sa imong oras, effort, patience, ug pagsabot.
+            Btaw jokes aside. I just want to say thank you for being part of my life.
+            Thank you sa imong time, effort, patience, and sa tanan
+            little things nga ginabuhat nimo para nako. Bisan usahay
+            simple ra siya para nimo, dako kaayo na siya og meaning para nako, dako
+            manjud sha bal kay partida sa pagsabot palanggani nmo nako
+            kuhang kuha mona akoHAHAHAH sanalng kaya ng labaw pas pagsabotHAHAHA
         </p>
 
         <p>
-            Thank you sa mga simple things nga imong gina do for me
-            nga basin para's imoha lablab is gamay ra, pero para nako bal dako nakaayo
-            na ug meaning. Thank youu sa imong mga words nga makapasmile nako
-            ug sa mga moments nga nakapafeel nimo nga importante ko lablab.
+            I know nga dili always perfect ang atong relationship pati nsab
+            ako bal sometimes masuko rgani kug wako kabalos hinungdanHAHAHA
+            partida d kaya ka magmahay nako bal maabot natag years basig mo
+            atras naka hab, bawal njud na sha nakalaan naka para saakinHAHAHA.
+            Btaw balik ko, naay times nga mag-away ta, masuko, mag-overthink,
+            or dili magkasinabot. Pero despite everything, I'm thankful
+            nga we still try to understand each other and fix the things
+            nga kinahanglan nato ayuhon. Pero pahilakon palage ka daan lageHAHAHHA.
         </p>
 
         <p>
-            Kabalo ko nga dili pirmi perfect ang tanan. Naay times nga
-            magkasinabtanay ta ug naa puy times nga magkalahi atong
-            utok charotHAHAHA akoa raman gud. Pero thankful ko kay padayon gihapon ta nga
-            galearn unsaon pagsabot ug pag-appreciate sa matag usa
+            I hope nga as time goes by, mas molig-on pa jud ta.
+            Unta dili ta dali mo-give up (unsay dali mo-give up?HAHAHA
+            dili ni mo-give up lablab uyyy) sa each other whenever things
+            become difficult. Let's continue supporting each other lablab ha,
+            understanding each other, and choosing each other every day kay 
+            we know part rnis atong journey mahal.💗💗
         </p>
 
         <p>
-            I really appreciate having you in my life. Dili man ko
-            perfect nga partner lablab, pero gusto nako nga mahibaw-an nimo
-            nga importante kaayo ka nako mahal🥹🥹.
-            I hope nga ma-feel nimo kung unsa ko ka-thankful nga naa ka always sa'kong
-            side bal.
+            Seven months may only be a small part of our story kay kabalo
+            kung layo pakaau ta sa tinuod lablab,
+            but daghan na kaayo kog memories nga akong na-treasure.
+            And I hope nga daghan pa kaayong months and years ang
+            atong maabot together mahal.🥹💗
+        </p>
+      
+        <p>
+           Then I would like to take this oppurtunity "oppurtunity???"HAHAHA
+           nga magsorry saakung kinatibuk-ang sala and sa mopadulongay paHAHAHA
+           and I really do hope that mas modako/taas pajud na imong patience
+           lablab kay nabantayan nanakong nagkadugay ta bal nagkagamay na akong
+           utokHUHUU HAHAHAH, nya ra paggamay² kung minyo nata ha??, okay namag
+          makasala ko nmo kay suyoon raman takag pina ultra promaxHAHAHAHAH
+      
+
+        <p>
+            Thank you for staying, hubby. Thank you for loving me
+            and for being someone special in my life. I'm really
+            grateful nga nakaila ko nimo though balik² nanang word
+            nga grateful lablab pero tinuod judna sha.🥹🥹
         </p>
 
         <p>
-            Salamat sa tanan nimong effort, sa imong kindness,
-            sa imong patience, ug sa mga memories nga atong nahimo.
-            I will always treasure the happy moments nga atong
-            gishare together akong bana🥹🤍
+            Wala mnko kabalo bal kung unsa na word/s akong gamiton
+            sa pag express kung unsa ko ka bless sa imoha,
+            but I hope you know how much I appreciate you.
+            Iloveyousomuchhh, my lablab.😚🥹
         </p>
-        
-        <p> And then sorryyy kaau lablab sa mga bati nako na
-            nahimo nmo po, sorry kaau tungod gapasulabi ang ego
-            sa imong asawa lablab kabalo ka bal dli parabana
-            maoHAHAHAHA charot ra bal uy mabut an rko puhon balHAHA
-            loveee man kaau ni nakong bana nako maong dnako mangaway
-            nmo lablab (paminawon langgudHAHA)
-        </p>
-
-        <p>
-            Bisan unsa pa ang mahitabo, I hope nga padayon ta nga
-            magtinabangay, mag-respeto, ug mag-support each other.
-            Thank you for being someone nga akong ma-appreciate,
-            ma-value, ug ma-thankful every day. Dli lang na bal
-            pero daghan pakaau lablab. No words can explain how
-            thankful I'm to have you bal🥹
-        </p>
-        <p> Stay healthy ka lablab and dli ka magpastress, dka mag 
-        overthink ug too muchh kay makabati nas health nmo bal. Imong
-        kaon hab dapat ano sakto anddd I'm always here to support you 
-        bal. Kung paminaw nmo nga ikaw ra usa saimong nga problems bal
-        aw ayaw'g paminawaHAHAHA charottt lang nara imong asawa bels.
-        Be happy permi bal and e enjoy ang lifeee✨✨
-        </p>
-
-        <div class="line"></div>
-
-        <p class="ending">
-            Thank you for being part of my life💗
-            Iloveyousomuchhyyy😚😚
-        </p>
-
-        <p class="signature">
-            With all my love,<br>
-            asawa nmo😚♡
-        </p>
-
-        <div class="sparkles">
-            ✨ 💗 ✨
-        </div>
 
     </div>
+
+    <button class="button" onclick="showMessage()">
+        CLICK THIS, HUBBYYYY 💌
+    </button>
+
+    <div id="message">
+        🥹💗 Seven months down, and hopefully many more to go.
+        <br><br>
+        Iloveyousomuchhhh my one and only lovee loveee! 😚💗
+        <br>
+        Thank you for being you. 💕
+      <br><br>
+      
+        Here's a lot of hugsss for youuu lablabb <br>
+        🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂
+       🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂
+       🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂
+       🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂
+      🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂
+      🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂
+      🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂
+      🫂🫂🫂🫂🫂🫂🫂🫂🫂🫂
+    </div>
+
+    <div class="bottom-hearts">
+        💗🤍💗
+      
+    </div>
+      
+</div>
+
+<script>
+    function showMessage() {
+        document.getElementById("message").style.display = "block";
+    }
+</script>
 
 </body>
 </html>
